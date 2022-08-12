@@ -1,3 +1,17 @@
+# Method for computing exponents; uses exponentiation by squaring method
+def pow(a, n):
+    if (n < 0):
+        return pow(1/a, -n)
+    elif(n == 0):
+        return 1
+    elif(n == 2):
+        return a*a
+    
+    if(n % 2 == 0):
+        return pow(a*a, n/2)
+    else:
+        return a*pow(a*a, (n-1)/2)
+
 # Method for computing the square root of a number a; uses Heron's method
 def sqrt(a):
     if(a < 0):
